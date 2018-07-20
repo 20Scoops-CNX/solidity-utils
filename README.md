@@ -1,6 +1,6 @@
 # Solidity Utils
 
-To use this library simply specify the import as the ones in this library seen below:
+We want to improve solidity basic skill also we create a basic library for learning and practice you can see how to use below:
 
 ```javascript
 pragma solidity ^0.4.16;
