@@ -1,6 +1,6 @@
 pragma solidity ^0.4.16;
 
-library Integer {
+library Integers {
 
     function parseInt(string _value) public returns (uint) {
         bytes memory _bytesValue = bytes(_value);
