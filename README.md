@@ -1,6 +1,6 @@
 # Solidity Utils
 
-We want to improve solidity basic skill also we create a basic library for learning and practice you can see how to use below:
+We want to improve solidity basic skill and we also create a basic library for learning and practice. You can see how to use as below:
 
 ```javascript
 pragma solidity ^0.4.16;
