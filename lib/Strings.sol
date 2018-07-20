@@ -16,12 +16,12 @@ library Strings {
             _newValue[j++] = _baseBtyes[i]; 
         }
         for (i = 0; i < _newValue.length; i++) {
-            _newValue[j++] = _newValue[i]; 
+            _newValue[j++] = _valueBtyes[i]; 
         }
         return string(_newValue);
     }
 
-    function size (string base) public returns (uint) {
+    function length (string base) public returns (uint) {
         bytes memory _bytes = bytes(base);
         return _bytes.length;
     }
