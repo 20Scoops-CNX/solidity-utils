@@ -15,7 +15,7 @@ library Strings {
         for (i = 0; i < _baseBtyes.length; i++) {
             _newValue[j++] = _baseBtyes[i]; 
         }
-        for (i = 0; i < _newValue.length; i++) {
+        for (i = 0; i < _valueBtyes.length; i++) {
             _newValue[j++] = _valueBtyes[i]; 
         }
         return string(_newValue);
