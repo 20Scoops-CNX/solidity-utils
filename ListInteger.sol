@@ -1,6 +1,6 @@
 pragma solidity ^0.4.16;
 
-library List {
+library ListInteger {
 
     modifier restricted(Items storage data) {
         require(data.items.length > 0);
@@ -27,7 +27,7 @@ library List {
         return data.items;
     }
 
-    function findItem(Items storage data, uint value) public restricted(data) returns (uint) {
+    function getIndexAtValue(Items storage data, uint value) public restricted(data) returns (uint) {
         for (uint index = 0; index < data.items.length; index++) {
             if (data.items[index] == value) {
                 return index;
