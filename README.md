@@ -7,8 +7,7 @@ pragma solidity ^0.4.16;
 
 import "github.com/20Scoops-CNX/solidity-utils/lib/ListInteger.sol";
 
-import
-"github.com/20Scoops-CNX/solidity-utils/lib/String.sol";
+import "github.com/20Scoops-CNX/solidity-utils/lib/String.sol";
 
 import "github.com/20Scoops-CNX/solidity-utils/lib/Integer.sol";
 
