@@ -5,12 +5,12 @@ We want to improve solidity basic skill and we also create a basic library for l
 ```javascript
 pragma solidity ^0.4.16;
 
-import "github.com/20Scoops-CNX/solidity-utils/ListInteger.sol";
+import "github.com/20Scoops-CNX/solidity-utils/lib/ListInteger.sol";
 
 import
-"github.com/20Scoops-CNX/solidity-utils/String.sol";
+"github.com/20Scoops-CNX/solidity-utils/lib/String.sol";
 
-import "github.com/20Scoops-CNX/solidity-utils/Integer.sol";
+import "github.com/20Scoops-CNX/solidity-utils/lib/Integer.sol";
 
 contract ExampleContract {
     List.Items private items;
@@ -18,3 +18,4 @@ contract ExampleContract {
     using Integers for uint;
 }
 ```
+
