@@ -15,28 +15,33 @@ library ListInteger {
         return items;
     }
 
-    function removeItem(uint[] storage items) public {
+    function remove(uint[] storage items) public {
         delete items[items.length-1];
         items.length--;
     }
 
-    function removeItem(uint[] storage items, uint index) public {
+    function removeByValue(uint[] storage items, uint value) public {
+        uint index = find(items, value);
+        removeByIndex(items, index);
+    }
+
+    function removeByIndex(uint[] storage items, uint index) public {
         if (index >= items.length) {
             return;
         }
-        
+
         for (uint i = index; i < items.length-1; i++) {
             items[i] = items[i + 1];
         }
         items.length--;
     }
 
-    function getIndexAtValue(uint[] storage items, uint value) public restricted(items) returns (uint) {
-        for (uint index = 0; index < items.length; index++) {
-            if (items[index] == value) {
-                return index;
-            }
+    function find(uint[] storage items, uint value) public restricted(items) returns (uint) {
+        uint i = 0;
+        while (items[i] != value) {
+            i++;
         }
+        return i;
     }
 
     function sort(uint[] storage items, bool desc) private returns (uint[]) {
@@ -71,5 +76,13 @@ library ListInteger {
     
     function getSize(uint[] items) public view returns (uint) {
         return items.length;
+    }
+
+    function sum(uint[] items) public view returns (uint) {
+        uint sum = 0;
+        for (uint i = 0; i<items.length; i++) {
+            sum += items[i]; 
+        }
+        return sum;
     }
 }
