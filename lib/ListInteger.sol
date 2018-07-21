@@ -2,34 +2,30 @@ pragma solidity ^0.4.16;
 
 library ListInteger {
 
-    modifier restricted(Items storage data) {
-        require(data.items.length > 0);
+    modifier restricted(uint[] items) {
+        require(items.length > 0);
         _;
     }
 
-    struct Items {
-        uint[] items;
+    function addItem(uint[] storage items, uint value) public {
+        items.push(value);
     }
 
-    function addItem(Items storage data, uint value) public {
-        data.items.push(value);
+    function removeItem(uint[] storage items) public returns (uint[]) {
+        delete items[items.length-1];
+        items.length--;
+        return items;
     }
 
-    function removeItem(Items storage data) public returns (uint[]) {
-        delete data.items[data.items.length-1];
-        data.items.length--;
-        return data.items;
+    function removeItem(uint[] storage items, uint index) public returns (uint[]) {
+        delete items[index];
+        items.length--;
+        return items;
     }
 
-    function removeItem(Items storage data, uint index) public returns (uint[]) {
-        delete data.items[index];
-        data.items.length--;
-        return data.items;
-    }
-
-    function getIndexAtValue(Items storage data, uint value) public restricted(data) returns (uint) {
-        for (uint index = 0; index < data.items.length; index++) {
-            if (data.items[index] == value) {
+    function getIndexAtValue(uint[] storage items, uint value) public restricted(items) returns (uint) {
+        for (uint index = 0; index < items.length; index++) {
+            if (items[index] == value) {
                 return index;
             }
         }
@@ -37,7 +33,7 @@ library ListInteger {
 
     function sort(uint[] storage items, bool desc) private returns (uint[]) {
         uint length = items.length;
-        uint[] storage arr = items;
+        uint[] arr = items;
 
         for (uint i = 0; i < length; i++) {
             for (uint j = i + 1; j < length; j++) {
@@ -57,15 +53,15 @@ library ListInteger {
         return arr;
     }
 
-    function sort(Items storage data) public returns (uint[]) {
-        return sort(data.items, false);
+    function sort(uint[] storage items) public returns (uint[]) {
+        return sort(items, false);
     }
 
-    function sortDESC(Items storage data) public returns (uint[]) {
-        return sort(data.items, true);
+    function sortDESC(uint[] storage items) public returns (uint[]) {
+        return sort(items, true);
     }
     
-    function getSize(Items storage data) public view returns (uint) {
-        return data.items.length;
+    function getSize(uint[] items) public view returns (uint) {
+        return items.length;
     }
 }
