@@ -7,11 +7,11 @@ library ListInteger {
         _;
     }
 
-    function addItem(uint[] storage items, uint value) public {
+    function add(uint[] storage items, uint value) public {
         items.push(value);
     }
 
-    function getItems(uint[] storage items) public returns (uint[]) {
+    function getItems(uint[] items) public returns (uint[]) {
         return items;
     }
 
@@ -36,7 +36,7 @@ library ListInteger {
         items.length--;
     }
 
-    function find(uint[] storage items, uint value) public restricted(items) returns (uint) {
+    function find(uint[] items, uint value) public restricted(items) returns (uint) {
         uint i = 0;
         while (items[i] != value) {
             i++;
