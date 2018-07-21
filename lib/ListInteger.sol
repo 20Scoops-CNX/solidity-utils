@@ -15,16 +15,20 @@ library ListInteger {
         return items;
     }
 
-    function removeItem(uint[] storage items) public returns (uint[]) {
+    function removeItem(uint[] storage items) public {
         delete items[items.length-1];
         items.length--;
-        return items;
     }
 
-    function removeItem(uint[] storage items, uint index) public returns (uint[]) {
-        delete items[index];
+    function removeItem(uint[] storage items, uint index) public {
+        if (index >= items.length) {
+            return;
+        }
+        
+        for (uint i = index; i < items.length-1; i++) {
+            items[i] = items[i + 1];
+        }
         items.length--;
-        return items;
     }
 
     function getIndexAtValue(uint[] storage items, uint value) public restricted(items) returns (uint) {
