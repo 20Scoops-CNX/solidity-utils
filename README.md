@@ -39,10 +39,10 @@ contract ExampleContract {
 Join two strings
 
 ```javascript
-    function example() {
-        string memory str = "20scoops";
-        str = str.concat(" ").concat("CNX");
-    }
+function example() {
+    string memory str = "20scoops";
+    str = str.concat(" ").concat("CNX");
+}
 ```
 
 ### length() : uint
@@ -50,10 +50,10 @@ Join two strings
 Get the length of a string
 
 ```javascript
-    function example() returns (uint) {
-        string memory str = "20scoops CNX";
-        return str.length();
-    }
+function example() returns (uint) {
+    string memory str = "20scoops CNX";
+    return str.length();
+}
 ```
 
 ### replaceAll(bytes1, btyes1) : string
@@ -61,10 +61,10 @@ Get the length of a string
 Replace all character in string
 
 ```javascript
-    function example() public view returns (string) {
-        string memory str = "20scoops CNX ";
-        return str.replaceAll(" ", "");
-    }
+function example() public view returns (string) {
+    string memory str = "20scoops CNX ";
+    return str.replaceAll(" ", "");
+}
 ```
 
 ### replace(bytes1, bytes1) : string
@@ -72,10 +72,10 @@ Replace all character in string
 Replace character in string
 
 ```javascript
-    function example() public view returns (string) {
-        string memory str = "20scoops CNX ";
-        return str.replace(" ", "");
-    }
+function example() public view returns (string) {
+    string memory str = "20scoops CNX ";
+    return str.replace(" ", "");
+}
 ```
 
 ### compareTo(string) : uint
@@ -83,10 +83,10 @@ Replace character in string
 Compare two string
 
 ```javascript
-    function example() public view returns (bool) {
-        string memory str = "20scoops CNX";
-        return str.compareTo("20scoops");
-    }
+function example() public view returns (bool) {
+    string memory str = "20scoops CNX";
+    return str.compareTo("20scoops");
+}
 ```
 
 # Intergers
@@ -98,9 +98,9 @@ Compare two string
 Convert string to unsigned integer
 
 ```javascript
-    function example() public view returns (uint) {
-        return Integers.parseInt("99.00");
-    }
+function example() public view returns (uint) {
+    return Integers.parseInt("99.00");
+}
 ```
 
 ### toString() : uint
@@ -108,7 +108,7 @@ Convert string to unsigned integer
 Convert unsigned integer to string
 
 ```javascript
-    function example(uint value) public view returns (string) {
-        return value.toString();
-    }
+function example(uint value) public view returns (string) {
+    return value.toString();
+}
 ```
