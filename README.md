@@ -12,7 +12,7 @@ import "github.com/20Scoops-CNX/solidity-utils/lib/String.sol";
 import "github.com/20Scoops-CNX/solidity-utils/lib/Integer.sol";
 
 contract ExampleContract {
-    List.Items private items;
+    using ListInteger for *;
     using Strings for string;
     using Integers for uint;
 }
@@ -26,6 +26,7 @@ contract ExampleContract {
 - [sort\() : string](#sort)
 - [sortDESC\() : string](#sortDESC)
 - [getSize\() : uint](#getSize--uint)
+- [sum\() : uint](#sum--uint)
 
 # Strings
 - [concat\(string\)](#concatstring)
@@ -92,6 +93,11 @@ function example() public view returns (bool) {
 # Intergers
 - [parseInt\(string\) : uint](#parseintstring--uint)
 - [toString\() : uint](#tostring--uint)
+- [plus\(uint) : uint](#plusuint--uint)
+- [minus\(uint) : uint](#minusuint--uint)
+- [divide\(uint) : uint](#divideuint--uint)
+- [multiply\(uint) : uint](#multiplyuint--uint)
+- [mod\(uint) : uint](#moduint--uint)
 
 ### parseInt(string) : uint 
 
@@ -110,5 +116,60 @@ Convert unsigned integer to string
 ```javascript
 function example(uint value) public view returns (string) {
     return value.toString();
+}
+```
+
+### plus(uint) : uint
+
+Plus unsigned integer
+
+```javascript
+function example() public view returns (uint) {
+    uint myInt = 5;
+    return myInt.plus(5);
+}
+```
+
+### minus(uint) : uint
+
+Minus unsigned integer
+
+```javascript
+function example() public view returns (string) {
+    uint myInt = 5;
+    return myInt.minus(5);
+}
+```
+
+### divide(uint) : uint
+
+Divide unsigned integer
+
+```javascript
+function example(uint value) public view returns (uint) {
+    uint myInt = 5;
+    return myInt.divide(5);
+}
+```
+
+### multiply(uint) : uint
+
+Multiply unsigned integer to string
+
+```javascript
+function example() public view returns (uint) {
+    uint myInt = 5;
+    return myInt.multiply(5);
+}
+```
+
+### mod(uint) : uint
+
+Modular unsigned integer
+
+```javascript
+function example() public view returns (string) {
+    uint myInt = 500;
+    return myInt.mod(6);
 }
 ```
