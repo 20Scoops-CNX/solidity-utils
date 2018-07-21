@@ -27,4 +27,27 @@ library Integers {
         }
         return string(_real);
     }
+
+    function plus(uint base, uint value) public returns (uint) {
+        return base + value;
+    }
+
+    function minus(uint base, uint value) public returns (uint) {
+        return base - value;
+    }
+
+    function multiply(uint base, uint value) public returns (uint) {
+        return base * value;
+    }
+
+    function divide(uint base, uint value) public returns (uint) {
+        if (value == 0) {
+            return 0;
+        }
+        return base / value;
+    }
+
+    function mod(uint base, uint value) public returns (uint) {
+        return base % value;
+    }
 }
