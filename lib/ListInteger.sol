@@ -24,7 +24,7 @@ library ListInteger {
         if (index >= items.length) {
             return;
         }
-        
+
         for (uint i = index; i < items.length-1; i++) {
             items[i] = items[i + 1];
         }
@@ -71,5 +71,13 @@ library ListInteger {
     
     function getSize(uint[] items) public view returns (uint) {
         return items.length;
+    }
+
+    function sum(uint[] items) public view returns (uint) {
+        uint sum = 0;
+        for (uint i = 0; i<items.length; i++) {
+            sum += items[i]; 
+        }
+        return sum;
     }
 }
