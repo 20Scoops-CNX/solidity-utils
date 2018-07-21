@@ -11,6 +11,10 @@ library ListInteger {
         items.push(value);
     }
 
+    function getItems(uint[] storage items) public returns (uint[]) {
+        return items;
+    }
+
     function removeItem(uint[] storage items) public returns (uint[]) {
         delete items[items.length-1];
         items.length--;
