@@ -32,7 +32,7 @@ contract ExampleContract {
 - [length\() : uint](#length--uint)
 - [replaceAll\(bytes1, bytes1) : string](#replaceAllbytes1-btyes1--string)
 - [replace\(bytes1, bytes1) : string](#replacebytes1-bytes1--string)
-- [compareTo\(string) : string](#eqaul--string)
+- [compareTo\(string) : bool](#compareTostring--bool)
 
 ### concat(string)
 
@@ -78,7 +78,7 @@ function example() public view returns (string) {
 }
 ```
 
-### compareTo(string) : uint
+### compareTo(string) : bool
 
 Compare two string
 
