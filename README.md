@@ -7,26 +7,126 @@ pragma solidity ^0.4.16;
 
 import "github.com/20Scoops-CNX/solidity-utils/lib/ListInteger.sol";
 
-import "github.com/20Scoops-CNX/solidity-utils/lib/String.sol";
+import "github.com/20Scoops-CNX/solidity-utils/lib/Strings.sol";
 
-import "github.com/20Scoops-CNX/solidity-utils/lib/Integer.sol";
+import "github.com/20Scoops-CNX/solidity-utils/lib/Integers.sol";
 
 contract ExampleContract {
     using ListInteger for *;
     using Strings for string;
     using Integers for uint;
+
+    uint[] items;
 }
 ```
 
 # ListInteger
-- [addItem\(uint value\)](#concat--string)
-- [removeItem\()](#length--uint)
-- [removeItem\(uint) : uint[]](#replaceAll--uint[])
-- [getIndexAtValue\(uint) : uint](#getIndexAtValue--uint)
-- [sort\() : string](#sort)
-- [sortDESC\() : string](#sortDESC)
+- [add\(uint\)](#adduint)
+- [remove\()](#remove)
+- [removeByValue\(uint)](#removebyvalueuint)
+- [removeByIndex\(uint)](#removebyindexuint)
+- [find\(uint) : uint](#finduint--uint)
+- [sort\() : uint[]](#sort--uint[])
+- [sortDESC\() : uint[]](#sortDESC--uint[])
 - [getSize\() : uint](#getSize--uint)
 - [sum\() : uint](#sum--uint)
+
+### add(uint)
+
+Add unsigned integer to array
+
+```javascript
+function example() public view returns (uint[]) {
+    items.add(99);
+    return items;
+}
+```
+
+### remove()
+
+Remove item last index like function pop() in array
+
+```javascript
+function example() public view returns (uint[]) {
+    items.remove();
+    return items;
+}
+```
+
+### removeByValue(uint)
+
+Remove item by value in array
+
+```javascript
+function example() public view returns (uint[]) {
+    items.removeByValue(99);
+    return items;
+}
+```
+
+### removeByIndex(uint)
+
+Remove item by index in array start at 0
+
+```javascript
+function example() public view returns (uint[]) {
+    items.removeByIndex(0);
+    return items;
+}
+```
+
+### find(uint) : uint
+
+Find index by value in array
+
+```javascript
+function example() public view returns (uint) {
+    uint index = items.find(99);
+    return index;
+}
+```
+
+### sort() : uint[]
+
+Sort ascending unsigned integer in array
+
+```javascript
+function example() public view returns (uint[]) {
+    return items.sort();
+}
+```
+
+### sortDESC() : uint[]
+
+Sort descending unsigned integer in array
+
+```javascript
+function example() public view returns (uint[]) {
+    return items.sortDESC();
+}
+```
+
+### getSize() : uint
+
+Get size array
+
+```javascript
+function example() public view returns (uint) {
+    uint size = items.getSize();
+    return size;
+}
+```
+
+### sum() : uint
+
+Sum unsigned integer in array
+
+```javascript
+function example() public view returns (uint) {
+    uint result = items.sum();
+    return result;
+}
+```
 
 # Strings
 - [concat\(string\)](#concatstring)
