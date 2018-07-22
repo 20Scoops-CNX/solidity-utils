@@ -26,8 +26,8 @@ contract ExampleContract {
 - [removeByValue\(uint)](#removebyvalueuint)
 - [removeByIndex\(uint)](#removebyindexuint)
 - [find\(uint) : uint](#finduint--uint)
-- [sort\() : uint[]](#sort--uint[])
-- [sortDESC\() : uint[]](#sortDESC--uint[])
+- [sort\() : uint[]](#sort--uint)
+- [sortDESC\() : uint[]](#sortDESC--uint)
 - [getSize\() : uint](#getSize--uint)
 - [sum\() : uint](#sum--uint)
 
